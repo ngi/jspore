@@ -24,6 +24,7 @@ public class Logger extends Middleware {
     @Override
     public void sendRequest(RequestBuilder request, Object body, Method context) throws SporeException {
         LOG.debug("request path: {}",request.build().getUrl());
+        LOG.debug("request headers: {}",request.build().getHeaders());
         if(body != null){
             LOG.debug("request body: {}", body.toString());
         } else {
